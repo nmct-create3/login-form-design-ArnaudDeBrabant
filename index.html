@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <section class="o-row o-row--lg o-row--body">
+    <section class="o-row o-row--lg o-row--body o-row--login">
         <div class="o-container u-max-width-xs">
             <h1 class="c-logo">
                 <svg class= "c-logo__symbol" viewBox="0 0 119 24" xmlns="http://www.w3.org/2000/svg">
@@ -44,34 +44,34 @@
                 </div>
                 <div class="c-card__body">
                     <p class="c-form-field">
-                        <label>
+                        <label class="c-label">
                             Username or email address
                         </label>
-                        <input type="email" name="username" id="username" placeholder="e.g. john@doe.com" required>
+                        <input class="c-input" type="email" name="username" id="username" required>
                     </p>
                     <p class="c-form-field">
-                        <label>
+                        <label class="c-label">
                             Password
                         </label>
-                        <input type="password" name="password" id="password" required>
+                        <input class="c-input" type="password" name="password" id="password" required>
                     </p>
                     <p class="c-form-field c-form-field--option">
                         <input type="checkbox" name="rememberme" id="rememberme">
-                        <label class="c-form-field--option">
+                        <label class="c-label--option c-form-field--option">
                              Remember me
                         </label>
                     </p>
                     <p>
-                        <input type="submit" value="Sign in" />
+                        <input class="c-button o-button-reset" type="submit" value="Sign in" />
                     </p>
-                    <p>
+                    <p class="u-align-text-center u-mb-clear u-text-sm">
                         <a href="#!">
                             Forgot password?
                         </a>
                     </p>
                 </div>
                 <div class="c-card__footer">
-                    <p>
+                    <p class="u-mb-sm u-text-sm u-color-lighter">
                         Don't have an account? <a href="#">Create an account</a>
                     </p>
                 </div>

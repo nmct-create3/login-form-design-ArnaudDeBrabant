@@ -17,7 +17,9 @@
 #Variables
 \*------------------------------------*/
 
-:root {}
+:root {
+    accent-color: #3385FF;
+}
 
 /* CSS variables here */
 
@@ -177,7 +179,7 @@ a {
 
 a:visited,
 a:active {
-    color: #2f6cc9;
+    color: #3385FF;
 }
 
 a:hover,
@@ -204,6 +206,9 @@ label, input {
 }
 
 .o-row--login {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
     /* stuff here to align the card */
 }
 
@@ -486,7 +491,36 @@ label, input {
     ---
     Card with box shadow
 */
+.c-card{
+    background: white;
+    border: 1px;
+    border-radius:3px ;
+    box-shadow: 0px 2px 4px #E7E8EB;
 
+}
+
+.c-card__body{
+    padding: 48px;
+
+}
+
+.c-card__title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+    padding-top: 48px;
+    padding-bottom: -10px;
+
+}
+
+.c-card__footer{
+    padding-bottom: 12px;
+    padding-top: 24px;
+    text-align: center;
+    border-top: 1px solid #E2E3E7;
+    line-height: 17px;
+}
 /*
     Component: Forms
     ---
@@ -499,9 +533,30 @@ label, input {
     Class to put on all input="text" like form inputs
 */
 
-.c-input {}
+.c-input {
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    line-height:24px;
+    padding:11px 16px; /*verticaal 1+11+24+11+1 */
+    color: #20223A; 
 
-.c-input:focus {}
+    border: 1px solid #E2E3E7;
+    border-color: #E2E3E7;
+    border-radius: 3px;
+    border-width: 1px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+.c-input:focus {
+    border-color: #3385FF;
+    box-shadow: 0 0 0 3px #3385ff4d; 
+    box-shadow: h-offset v-offset blur spread color;
+}
 
 /*
     Component: Label
@@ -509,7 +564,19 @@ label, input {
     Class to put on all form labels
 */
 
-.c-label {}
+.c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
+
+.c-label--option{
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 8px;
+    color: #606274;
+}
 
 /* If a input is focused within the form-field class change te color of the label */
 .c-form-field--option {
@@ -532,13 +599,34 @@ label, input {
     Class to put on form buttons or links
 */
 
-.c-button {}
+.c-button {
+    font-weight: 600;
+    font-size: 16px;
+    background:#3385FF;
+    color: #FFFFFF;
+    border: 1px solid #2e77e6;
+    border-radius: 3px;
+    padding: 11px 0;
+    line-height: 24px;
+    box-sizing: border-box;
+    width: 100%;
+}
 
-.c-button:hover {}
+.c-button:hover {
+    background: #5397fd;
 
-.c-button:focus {}
+}
 
-.c-button:active {}
+.c-button:focus {
+    background: #5397fd;
+    outline: none;
+    box-shadow: 0 0 0 3px #3385FF4d;
+}
+
+.c-button:active {
+    background: #0668fc;
+    box-shadow: none;
+}
 
 .c-button--block {}
 
@@ -558,6 +646,10 @@ label, input {
 
 .u-color-neutral-dark {
     color: Black;
+}
+
+.u-color-lighter{
+    color: #757787;
 }
 
 /*
