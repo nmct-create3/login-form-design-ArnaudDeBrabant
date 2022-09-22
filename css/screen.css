@@ -19,11 +19,15 @@
 
 :root {
     accent-color: #3385FF;
-    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha-light: #66a2fd;
     --global-color-alpha: #3385FF;
     --global-color-alpha-dark: #2E77E6;
     --global-darktheme-alpha: #20223A;
     --global-darktheme-alpha-light:#35374D;
+    --global-darktheme-alpha-dark:#1D1E35;
+    --global-margin-alpha: 0 0 24px;
+    --global-whitespace: 24px;
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /* = 48px */
 }
 
 /* CSS variables here */
@@ -104,19 +108,19 @@ h3 {
 h1 {
     font-size: 36px;
     line-height: 48px;
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 h2 {
     font-size: 32px;
     line-height: 40px;
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 h3 {
     font-size: 26px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 h4,
@@ -124,7 +128,7 @@ h5,
 h6 {
     font-size: 20px;
     line-height: 24px;
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 p{
@@ -138,12 +142,12 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 ul,
 ol {
-    padding-left: 24px;
+    padding-left: var(--global-whitespace);
 }
 
 li ul,
@@ -155,7 +159,7 @@ blockquote {
     font-style: normal;
     font-size: 23px;
     line-height: 32px;
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 blockquote * {
@@ -174,7 +178,7 @@ hr {
     border: 0;
     height: 1px;
     background: LightGrey;
-    margin: 0 0 24px;
+    margin: var(--global-margin-alpha);
 }
 
 a {
@@ -182,9 +186,6 @@ a {
     transition: all .1s ease-in-out;
 }
 
-a:hover {
-    color: var(--global-color-alpha-light);
-}
 
 a:visited {
     color: var(--global-color-alpha);
@@ -193,7 +194,7 @@ a:active {
     color: var(--global-color-alpha-dark);
 }
 
-a:focus {
+a:focus, :hover {
     color: var(--global-color-alpha-light);
 }
 
@@ -225,19 +226,19 @@ label, input {
 /* size modifiers */
 
 .o-row--lg {
-    padding-top: 48px;
-    padding-bottom: 24px;
+    padding-top: var(--global-whitespace-xl);
+    padding-bottom: var(--global-whitespace);
 }
 
 .o-row--xl {
     padding-top: 72px;
-    padding-bottom: 48px;
+    padding-bottom: var(--global-whitespace-xl);
 }
 
 @media (min-width: 768px) {
     .o-row {
-        padding-left: 48px;
-        padding-right: 48px;
+        padding-left: var(--global-whitespace-xl);
+        padding-right: var(--global-whitespace-xl);
     }
 }
 
@@ -280,7 +281,7 @@ label, input {
 
     .o-section--lg+.o-section--lg,
     .o-section--xl+.o-section--xl {
-        padding-top: 48px;
+        padding-top: var(--global-whitespace-xl);
     }
 }
 
@@ -484,16 +485,16 @@ label, input {
 }
 
 .c-logo__path--1{
-    fill: #20223A;
+    fill: white;
 }
 
 .c-logo__path--2{
-    color: var(--global-color-alpha);
+    fill: white;
     
 }
 
 .c-logo__path--3{
-    fill: #1B4186;
+    fill: white;
 }
 
 /*
@@ -505,7 +506,7 @@ label, input {
     background: var(--global-darktheme-alpha-light);
     border: 1px;
     border-radius:3px ;
-    box-shadow: 0px 2px 4px #E7E8EB;
+    box-shadow: 0px 2px 4px var(--global-darktheme-alpha-dark);
 
 }
 
@@ -521,6 +522,7 @@ label, input {
     line-height: 21px;
     padding-top: 48px;
     padding-bottom: -10px;
+    color: white;
 
 }
 
@@ -528,7 +530,7 @@ label, input {
     padding-bottom: 12px;
     padding-top: 24px;
     text-align: center;
-    border-top: 1px solid #E2E3E7;
+    border-top: 1px solid var(--global-darktheme-alpha);
     line-height: 17px;
 }
 /*
@@ -549,10 +551,11 @@ label, input {
     font-size: 16px;
     line-height:24px;
     padding:11px 16px; /*verticaal 1+11+24+11+1 */
-    color: #20223A; 
+    color: white; 
+    background: var(--global-darktheme-alpha);
 
-    border: 1px solid #E2E3E7;
-    border-color: #E2E3E7;
+    border: 1px solid var(--global-darktheme-alpha-light);
+    border-color: var(--global-darktheme-alpha);
     border-radius: 3px;
     border-width: 1px;
 
@@ -568,6 +571,10 @@ label, input {
     box-shadow: h-offset v-offset blur spread color;
 }
 
+.c-input-rememberme{
+    
+}
+
 /*
     Component: Label
     ---
@@ -578,14 +585,14 @@ label, input {
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 8px;
-    color: #606274;
+    color: #B5B6C0;
 }
 
 .c-label--option{
     font-size: 14px;
     line-height: 16px;
     margin-left: 8px;
-    color: #606274;
+    color: #B5B6C0;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
