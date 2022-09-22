@@ -19,6 +19,11 @@
 
 :root {
     accent-color: #3385FF;
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-darktheme-alpha: #20223A;
+    --global-darktheme-alpha-light:#35374D;
 }
 
 /* CSS variables here */
@@ -37,11 +42,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Inter Web", sans-serif;
-    color: #20223a;
+    color: white;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color:#F5F6FA;
+    background-color: var(--global-darktheme-alpha);
 }
 
 *,
@@ -173,18 +178,23 @@ hr {
 }
 
 a {
-    color: #3385FF;
+    color: var(--global-color-alpha);
     transition: all .1s ease-in-out;
 }
 
-a:visited,
-a:active {
-    color: #3385FF;
+a:hover {
+    color: var(--global-color-alpha-light);
 }
 
-a:hover,
+a:visited {
+    color: var(--global-color-alpha);
+}
+a:active {
+    color: var(--global-color-alpha-dark);
+}
+
 a:focus {
-    color: #7eb1fc;
+    color: var(--global-color-alpha-light);
 }
 
 label, input {
@@ -478,7 +488,7 @@ label, input {
 }
 
 .c-logo__path--2{
-    fill: #3385FF ;
+    color: var(--global-color-alpha);
     
 }
 
@@ -492,7 +502,7 @@ label, input {
     Card with box shadow
 */
 .c-card{
-    background: white;
+    background: var(--global-darktheme-alpha-light);
     border: 1px;
     border-radius:3px ;
     box-shadow: 0px 2px 4px #E7E8EB;
@@ -553,7 +563,7 @@ label, input {
 }
 
 .c-input:focus {
-    border-color: #3385FF;
+    color: var(--global-color-alpha);
     box-shadow: 0 0 0 3px #3385ff4d; 
     box-shadow: h-offset v-offset blur spread color;
 }
@@ -602,7 +612,7 @@ label, input {
 .c-button {
     font-weight: 600;
     font-size: 16px;
-    background:#3385FF;
+    background: var(--global-color-alpha);
     color: #FFFFFF;
     border: 1px solid #2e77e6;
     border-radius: 3px;
@@ -613,12 +623,12 @@ label, input {
 }
 
 .c-button:hover {
-    background: #5397fd;
+    background: var(--global-color-alpha-light);
 
 }
 
 .c-button:focus {
-    background: #5397fd;
+    background:var(--global-color-alpha-light);
     outline: none;
     box-shadow: 0 0 0 3px #3385FF4d;
 }
