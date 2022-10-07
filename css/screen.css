@@ -27,10 +27,11 @@
     --global-darktheme-alpha-light-xl:#4B4C60;
     --global-color-global-background:#E2E3E7 ;
     --global-color-global-card: #F5F6FA;
+    --global-input-borderColor: black;
     
 
     /*shadows*/
-    --focus-shadow-color: #1D1E35;
+    --focus-shadow-color: #C1DAFF;
     --focus-shadow: 0 0 0 3px var(--focus-shadow-color);
     --global-input-boxShadow: #C1DAFF;
     --global-input-focus-borderColor: #81ADF0;
@@ -61,6 +62,8 @@
     --global-page-color: var(--global-darktheme-alpha);
     --global-page-backgroundColor: var(--global-color-global-background);
     --global-card: var(--global-color-global-card);
+    --global-borderRadius: 3px;
+    --global-borderWidth: 1px;
 }
 
 /* CSS variables here */
@@ -76,6 +79,9 @@
 */
 
 @media (prefers-color-scheme: dark) {
+    :root{
+        --focus-shadow-color: #1D1E35 !important;
+    }
     html {
         --global-page-color: White !important;
         --global-page-backgroundColor: var(--global-darktheme-alpha) !important;
@@ -281,6 +287,23 @@ label, input {
     ---
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
 
 .o-row {
     position: relative;
@@ -724,9 +747,6 @@ label, input {
     display: block;
 }
 
-.c-custom-option:hover {
-    --custom-option-borderColor: var(--custom-option-hover-borderColor);
-  }
 
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
     transition: 2s;
@@ -739,12 +759,13 @@ label, input {
     display: flex;
     width: 16px;
     height: 16px;
-    border: var(--global-borderWidth) solid var(--custom-option-borderColor);
+    border: var(--global-borderWidth) solid var(--global-color-alpha);
     margin-right: 8px;
 }
 
 .c-custom-option__fake-input:hover {
-    border-color: var(--custom-option-borderColor);
+    border-color: var(--global-color-alpha);
+    box-shadow: var(--focus-shadow);
 }
 
 .c-custom-option__fake-input--checkbox {
